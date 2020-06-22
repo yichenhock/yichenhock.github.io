@@ -1,171 +1,53 @@
-(function() {
-    var initPhotoSwipeFromDOM;
-  
-    initPhotoSwipeFromDOM = function(gallerySelector) {
-      var closest, galleryElements, hashData, i, l, onThumbnailsClick, openPhotoSwipe, parseThumbnailElements, photoswipeParseHash;
-      parseThumbnailElements = function(el) {
-        var figureEl, i, item, items, linkEl, numNodes, size, thumbElements;
-        thumbElements = el.childNodes;
-        numNodes = thumbElements.length;
-        items = [];
-        figureEl = void 0;
-        linkEl = void 0;
-        size = void 0;
-        item = void 0;
-        i = 0;
-        while (i < numNodes) {
-          figureEl = thumbElements[i];
-          if (figureEl.nodeType !== 1) {
-            i++;
-            continue;
-          }
-          linkEl = figureEl.children[0];
-          size = linkEl.getAttribute('data-size').split('x');
-          item = {
-            src: linkEl.getAttribute('href'),
-            w: parseInt(size[0], 10),
-            h: parseInt(size[1], 10)
-          };
-          if (figureEl.children.length > 1) {
-            item.title = figureEl.children[1].innerHTML;
-          }
-          if (linkEl.children.length > 0) {
-            item.msrc = linkEl.children[0].getAttribute('src');
-          }
-          item.el = figureEl;
-          items.push(item);
-          i++;
-        }
-        return items;
-      };
-      closest = function(el, fn) {
-        return el && (fn(el) ? el : closest(el.parentNode, fn));
-      };
-      onThumbnailsClick = function(e) {
-        var childNodes, clickedGallery, clickedListItem, eTarget, i, index, nodeIndex, numChildNodes;
-        e = e || window.event;
-        if (e.preventDefault) {
-          e.preventDefault();
-        } else {
-          e.returnValue = false;
-        }
-        eTarget = e.target || e.srcElement;
-        clickedListItem = closest(eTarget, function(el) {
-          return el.tagName && el.tagName.toUpperCase() === 'FIGURE';
-        });
-        if (!clickedListItem) {
-          return;
-        }
-        clickedGallery = clickedListItem.parentNode;
-        childNodes = clickedListItem.parentNode.childNodes;
-        numChildNodes = childNodes.length;
-        nodeIndex = 0;
-        index = void 0;
-        i = 0;
-        while (i < numChildNodes) {
-          if (childNodes[i].nodeType !== 1) {
-            i++;
-            continue;
-          }
-          if (childNodes[i] === clickedListItem) {
-            index = nodeIndex;
-            break;
-          }
-          nodeIndex++;
-          i++;
-        }
-        if (index >= 0) {
-          openPhotoSwipe(index, clickedGallery);
-        }
-        return false;
-      };
-      photoswipeParseHash = function() {
-        var hash, i, pair, params, vars;
-        hash = window.location.hash.substring(1);
-        params = {};
-        if (hash.length < 5) {
-          return params;
-        }
-        vars = hash.split('&');
-        i = 0;
-        while (i < vars.length) {
-          if (!vars[i]) {
-            i++;
-            continue;
-          }
-          pair = vars[i].split('=');
-          if (pair.length < 2) {
-            i++;
-            continue;
-          }
-          params[pair[0]] = pair[1];
-          i++;
-        }
-        if (params.gid) {
-          params.gid = parseInt(params.gid, 10);
-        }
-        return params;
-      };
-      openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
-        var gallery, items, j, options, pswpElement;
-        pswpElement = document.querySelectorAll('.pswp')[0];
-        gallery = void 0;
-        options = void 0;
-        items = void 0;
-        items = parseThumbnailElements(galleryElement);
-        options = {
-          galleryUID: galleryElement.getAttribute('data-pswp-uid'),
-          getThumbBoundsFn: function(index) {
-            var pageYScroll, rect, thumbnail;
-            thumbnail = items[index].el.getElementsByTagName('img')[0];
-            pageYScroll = window.pageYOffset || document.documentElement.scrollTop;
-            rect = thumbnail.getBoundingClientRect();
-            return {
-              x: rect.left,
-              y: rect.top + pageYScroll,
-              w: rect.width
-            };
-          }
-        };
-        if (fromURL) {
-          if (options.galleryPIDs) {
-            j = 0;
-            while (j < items.length) {
-              if (items[j].pid === index) {
-                options.index = j;
-                break;
-              }
-              j++;
-            }
-          } else {
-            options.index = parseInt(index, 10) - 1;
-          }
-        } else {
-          options.index = parseInt(index, 10);
-        }
-        if (isNaN(options.index)) {
-          return;
-        }
-        if (disableAnimation) {
-          options.showAnimationDuration = 0;
-        }
-        gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
-        gallery.init();
-      };
-      galleryElements = document.querySelectorAll(gallerySelector);
-      i = 0;
-      l = galleryElements.length;
-      while (i < l) {
-        galleryElements[i].setAttribute('data-pswp-uid', i + 1);
-        galleryElements[i].onclick = onThumbnailsClick;
-        i++;
-      }
-      hashData = photoswipeParseHash();
-      if (hashData.pid && hashData.gid) {
-        openPhotoSwipe(hashData.pid, galleryElements[hashData.gid - 1], true, true);
-      }
-    };
-  
-    initPhotoSwipeFromDOM('.gallery');
-  
-  }).call(this);
+
+class FilterGallery {
+	
+	constructor(){
+		this.$filtermenuList = $('.filtermenu li');
+		this.$container      = $('.container');
+		
+		this.updateMenu('all');
+		this.$filtermenuList.on('click', $.proxy(this.onClickFilterMenu, this));
+	}
+	
+	onClickFilterMenu(event){
+		const $target      = $(event.target);
+		const targetFilter = $target.data('filter');
+
+		this.updateMenu(targetFilter);
+		this.updateGallery(targetFilter);
+	}
+	
+	updateMenu(targetFilter){
+		this.$filtermenuList.removeClass('active');
+		this.$filtermenuList.each((index, element)=>{
+			const targetData = $(element).data('filter');
+
+			if(targetData === targetFilter){
+				$(element).addClass('active');
+			}
+		})
+	}
+	
+	updateGallery(targetFilter){
+
+		if(targetFilter === 'all'){
+			this.$container.fadeOut(300, ()=>{
+				$('.post').show();
+				this.$container.fadeIn();
+			});
+		}else {
+			this.$container.find('.post').each((index, element)=>{
+				this.$container.fadeOut(300, ()=>{
+					if($(element).hasClass(targetFilter)) {
+						$(element).show();
+					}else {
+						$(element).hide();
+					}
+					this.$container.fadeIn();
+				})
+			});
+		}
+	}
+}
+
+const filterGallery = new FilterGallery();

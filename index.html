@@ -9,14 +9,14 @@
     <link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="index.css">
-    <link rel = "icon" type = "image/png" href = "/icon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel = "icon" type = "image/png" href = "./images/icon.png">
 </head>
+
 <body>
     <div id="loading">
         <div id="spinner"></div>
     </div>
-    <div id="particles-js"></div>
     <div id="box">
         <div class="box1 onlywide animated bounceOutLeft" style="animation-delay:1.7s;"></div>
         <div class="box2 onlywide animated bounceOutLeft" style="animation-delay:1.8s;"></div>
@@ -25,48 +25,52 @@
         <div class="box2 onlywide animated bounceOutRight" style="animation-delay:1.8s;"></div>
         <div class="box2 onlywide animated bounceOutRight" style="animation-delay:1.7s;"></div>
     </div>
-    <a id="about" onclick="showabout()" class="animated fadeIn" style="animation-delay:2.2s;">about</a>
-    <a id="work" onclick="showwork()" class="animated fadeIn" style="animation-delay:2.2s;">work</a>
-    <a id="contact" onclick="showcontact()" class="animated fadeIn" style="animation-delay:2.2s;">contact</a>
-    <div id="middle" class="animated slideInDown" style="animation-delay:2.0s;">
-        <h1><a href="" class="typewrite" data-period="2000" data-type='[ "I&apos;m Yi Chen Hock", "Engineer and Illustrator", "Programming enthusiast" ]'>
-          </a>
-        </h1>
-        <h2>Studying <span style="color: rgb(245, 173, 88)">Engineering</span> at <span style="color: #fd9473">Cambridge</span>. </h2>
-        <h3>Digital Illustrator & Programmer</h3>
-        <div id="menu">
-            <a onclick="showabout()">about</a>
-            <a onclick="showwork()">work</a>
-            <a onclick="showcontact()">contact</a>
+    
+
+    <div id="header" class="animated slideInDown" style="animation-delay:1.8s;">
+        <div id="links">
+            <a href="#about">about</a>
+            <a href="#work">works</a>
+            <a href="#contact">contact</a>
         </div>
-        <table>
-                <tr>
-                    <td class="animated zoomIn" style="animation-delay:2.2s;"><a class="social" href="mailto:ych31@cam.ac.uk"><i class="far fa-envelope"></i></a></td>
-                    <td class="animated zoomIn" style="animation-delay:2.2s;"><a class="social" href="https://www.facebook.com/profile.php?id=100004854345993"><i class="fab fa-facebook"></i></a></td>
-                    <td class="animated zoomIn" style="animation-delay:2.4s;"><a class="social" href="https://twitter.com/chen_dll"><i class="fab fa-twitter"></i></a></td>
-                    <td class="animated zoomIn" style="animation-delay:2.6s;"><a class="social" href="https://www.instagram.com/chen_dll/"><i class="fab fa-instagram"></i></a></td>
-                    <td class="animated zoomIn" style="animation-delay:2.6s;"><a class="social" href="http://www.youtube.com/c/kawaiiawesomer"><i class="fab fa-youtube"></i></a></td>
-                    <!--<td class="animated zoomIn" style="animation-delay:2.8s;"><a class="social" href="https://chendll.tumblr.com/"><i class="fab fa-tumblr"></i></a></td>-->
-                    <td class="animated zoomIn" style="animation-delay:2.8s;"><a class="social" href="https://www.artstation.com/chen_dll"><i class="fab fa-artstation"></i></a></td>
-                    <td class="animated zoomIn" style="animation-delay:2.8s;"><a class="social" href="https://www.linkedin.com/in/yichenhock/"><i class="fab fa-linkedin"></i></a></td>
-                    <td class="animated zoomIn" style="animation-delay:2.8s;"><a class="social" href="https://github.com/yichenhock/"><i class="fab fa-github"></i></a></td>
-                </tr>
-        </table>
     </div>
-    <div id="work_container" class="container">
-        <div onclick="closework()"><i class="fas fa-angle-right"></i></div>
-        <h1>works.</h1>
-        <section>
-            <h2>portfolio</h2>
-            <p>
-                what do i put here.
-            </p>
-            <button class="btn_one">resume</button>
-            <!--<button class="btn_two">button 2</button>-->
-        </section>
+
+    <div id="middle" class="animated slideInDown" style="animation-delay:2.0s;">
+        
+    <div id="particles-js"></div>
+        <h1><a href="" class="typewrite" data-period="2000" data-type='[ "I&apos;m Yi Chen Hock", "Engineer and Illustrator", "Programming enthusiast" ]'>
+        </a>
+      </h1>
+      <h2>Studying <span style="color: rgb(245, 173, 88)">Engineering</span> at <span style="color: #fd9473">Cambridge</span>. </h2>
+      <h3>Digital Illustrator & Programmer</h3>
+      <!-- <div id="menu">
+          <a onclick="showabout()">about</a>
+          <a onclick="showwork()">work</a>
+          <a onclick="showcontact()">contact</a>
+      </div> -->
+      <table>
+              <tr>
+                  <td class="animated zoomIn" style="animation-delay:2.2s;"><a class="social" href="mailto:ych31@cam.ac.uk"><i class="far fa-envelope"></i></a></td>
+                  <td class="animated zoomIn" style="animation-delay:2.2s;"><a class="social" href="https://www.facebook.com/profile.php?id=100004854345993"><i class="fab fa-facebook"></i></a></td>
+                  <td class="animated zoomIn" style="animation-delay:2.4s;"><a class="social" href="https://twitter.com/chen_dll"><i class="fab fa-twitter"></i></a></td>
+                  <td class="animated zoomIn" style="animation-delay:2.6s;"><a class="social" href="https://www.instagram.com/chen_dll/"><i class="fab fa-instagram"></i></a></td>
+                  <td class="animated zoomIn" style="animation-delay:2.6s;"><a class="social" href="http://www.youtube.com/c/kawaiiawesomer"><i class="fab fa-youtube"></i></a></td>
+                  <td class="animated zoomIn" style="animation-delay:2.8s;"><a class="social" href="https://chendll.tumblr.com/"><i class="fab fa-tumblr"></i></a></td>
+                  <td class="animated zoomIn" style="animation-delay:2.8s;"><a class="social" href="https://www.artstation.com/chen_dll"><i class="fab fa-artstation"></i></a></td>
+                  <td class="animated zoomIn" style="animation-delay:2.8s;"><a class="social" href="https://www.linkedin.com/in/yichenhock/"><i class="fab fa-linkedin"></i></a></td>
+                  <td class="animated zoomIn" style="animation-delay:2.8s;"><a class="social" href="https://github.com/yichenhock/"><i class="fab fa-github"></i></a></td>
+              </tr>
+      </table>
+      <table>
+          <tr>
+              <td class="animated zoomIn" style="animation-delay:3.0s;"><button class="btn_one" onclick="location.href='https://chendll.itch.io/'">my games</button></td>
+              <td class="animated zoomIn" style="animation-delay:3.2s;"><button class="btn_one" onclick="location.href='https://ko-fi.com/chen_dll'">support me here</button></td>
+          </tr>
+      </table>
     </div>
-    <div id="about_container" class="container">
-            <div onclick="closeabout()"><i class="fas fa-angle-left"></i></div>
+
+    <div id="portfolio">
+        <div id="about">
             <h1>about.</h1>
             <section>
                 <h2>about me</h2>
@@ -74,43 +78,52 @@
                     I study engineering at the University of Cambridge. 
                 </p>
                 <p>
-                    I enjoy creating digital illustrations, creating music and developing games. 
+                    I create digital illustrations and develop games. 
                 </p>
+                
+            <button class="btn_two">resume</button>
             </section>
             <section>
                 <h2>skills</h2>
                 <div id="used">
-                    <div><i class="fas fa-circle"></i>&nbsp;Arduino</div>
-                    <div><i class="fas fa-circle"></i>&nbsp;Python</div>
-                    <div><i class="fas fa-circle"></i>&nbsp;Unity</div>
-                    <div><i class="fas fa-circle"></i>&nbsp;Godot</div>
-                    <div><i class="fas fa-circle"></i>&nbsp;Photoshop</div>
+                    <div class = "software"><i style="color: #fd9473" class="fas fa-circle"></i>&nbsp;Arduino</div>
+                    <div class = "software"><i style="color: #fd9473" class="fas fa-circle"></i>&nbsp;Python</div>
+                    <div class = "software"><i style="color: #fd9473" class="fas fa-circle"></i>&nbsp;Unity</div>
+                    <div class = "software"><i style="color: #fd9473" class="fas fa-circle"></i>&nbsp;Godot</div>
+                    <div class = "software"><i style="color: #fd9473" class="fas fa-circle"></i>&nbsp;Photoshop</div>
+                    <br>
+                    <div class = "language"><i style="color: rgb(245, 173, 88)" class="fas fa-circle"></i>&nbsp;English</div>
+                    <div class = "language"><i style="color: rgb(245, 173, 88)" class="fas fa-circle"></i>&nbsp;Mandarin Chinese</div>
                 </div>
             </section>
         </div>
-        <!--
-          <div id="contact_container" class="container">
-            <div onclick="closecontact()"><i class="fas fa-angle-down"></i></div>
-            <h1>contact.</h1>
-            <section>
-                <h2>contact me</h2>
+        <div id="work">
+            <h1>works.</h1>
+            <div>
                 <p>
-                    <form>
-                        <input type="text" placeholder="name" required>
-                        <input type="email" placeholder="email" required><br>
-                        <textarea placeholder="your message" required rows="5"></textarea><br>
-                        <button class="btn_one">send</button>
-                    </form> 
+                    Lorem ipsum. 
                 </p>
-            </section>
+            </div>
         </div>
-        -->
-        <div id="footer">
-            support me <a href="https://ko-fi.com/chen_dll">here</a>
+        <div id="contact">
+            <h1>contact.</h1>
+            <form>
+                <input type="text" placeholder="name" required>
+                <input type="email" placeholder="email" required><br>
+                <textarea placeholder="your message" required rows="5"></textarea><br>
+                <button class="btn_two">send</button>
+            </form> 
         </div>
+    </div>
+
+    <div id="footer">
+        yi chen hock<br>2020
+    </div>
+
     <script src="index.js" type="text/javascript"></script>
     <script src="particles.js"></script>
     <script src="app.js"></script>
     <script src="typewrite.js"></script>
 </body>
+
 </html>
