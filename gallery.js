@@ -1,53 +1,38 @@
+// filter gallery
 
-class FilterGallery {
-	
-	constructor(){
-		this.$filtermenuList = $('.filtermenu li');
-		this.$container      = $('.container');
-		
-		this.updateMenu('all');
-		this.$filtermenuList.on('click', $.proxy(this.onClickFilterMenu, this));
-	}
-	
-	onClickFilterMenu(event){
-		const $target      = $(event.target);
-		const targetFilter = $target.data('filter');
 
-		this.updateMenu(targetFilter);
-		this.updateGallery(targetFilter);
-	}
-	
-	updateMenu(targetFilter){
-		this.$filtermenuList.removeClass('active');
-		this.$filtermenuList.each((index, element)=>{
-			const targetData = $(element).data('filter');
+$('.btn').click(function(){
+    $('.btn').removeClass('on');
+    $(this).toggleClass('on');
+});
 
-			if(targetData === targetFilter){
-				$(element).addClass('active');
-			}
-		})
-	}
-	
-	updateGallery(targetFilter){
+$('.btn.all').click(function(){
+    $('.grid').isotope({
+        filter: '*'
+    })			
+});
 
-		if(targetFilter === 'all'){
-			this.$container.fadeOut(300, ()=>{
-				$('.post').show();
-				this.$container.fadeIn();
-			});
-		}else {
-			this.$container.find('.post').each((index, element)=>{
-				this.$container.fadeOut(300, ()=>{
-					if($(element).hasClass(targetFilter)) {
-						$(element).show();
-					}else {
-						$(element).hide();
-					}
-					this.$container.fadeIn();
-				})
-			});
-		}
-	}
-}
 
-const filterGallery = new FilterGallery();
+$('.btn.artwork').click(function(){
+    $('.grid').isotope({
+        filter: '.artwork'
+    })
+});
+
+
+$('.btn.programming').click(function(){
+    $('.grid').isotope({
+        filter: '.programming'
+    })
+});
+
+// $('.grid').imagesLoaded(function(){
+//     // grid 배치
+//     $('.grid').isotope({
+//         // options
+//         itemSelector: '.grid-item',
+//         layoutMode: 'fitRows',
+//     });
+// });
+
+$('.grid').isotope({ filter: '*' });

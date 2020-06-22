@@ -81,7 +81,6 @@
                     I create digital illustrations and develop games. 
                 </p>
                 
-            <button class="btn_two">resume</button>
             </section>
             <section>
                 <h2>skills</h2>
@@ -91,19 +90,90 @@
                     <div class = "software"><i style="color: #fd9473" class="fas fa-circle"></i>&nbsp;Unity</div>
                     <div class = "software"><i style="color: #fd9473" class="fas fa-circle"></i>&nbsp;Godot</div>
                     <div class = "software"><i style="color: #fd9473" class="fas fa-circle"></i>&nbsp;Photoshop</div>
-                    <br>
                     <div class = "language"><i style="color: rgb(245, 173, 88)" class="fas fa-circle"></i>&nbsp;English</div>
                     <div class = "language"><i style="color: rgb(245, 173, 88)" class="fas fa-circle"></i>&nbsp;Mandarin Chinese</div>
                 </div>
+                <button class="btn_two">resume</button>
             </section>
         </div>
         <div id="work">
             <h1>works.</h1>
-            <div>
-                <p>
-                    Lorem ipsum. 
-                </p>
+            <div style="text-align: right;">
+                <button class="btn_two" onclick="showillust()">illustration prices and examples</button>
+                <button class="btn_two">terms of service</button>
+                <!-- <button class="btn_two">commission form</button> -->
             </div>
+            
+            <div class="button-group">
+                <button class="btn all on">all</button>
+                <button class="btn artwork">artwork</button>
+                <button class="btn programming">programming</button>
+            </div>
+            <ul class="grid">
+                <li class="grid-item element-item artwork">
+                    <img src="./images/daizai.png"/>
+                    <div class="overlay">
+                        <p class="caption">Dazai Osamu</p>
+                        <button class="btn_img" onclick="location.href='https://twitter.com/chen_dll/status/1262051686195101698?s=20'">Digital illustration</button>
+                    </div>
+                </li>
+                <li class="grid-item element-item artwork">
+                    <img src="./images/chen_dll3k_final.png"/>
+                    <div class="overlay">
+                        <p class="caption">Curiosity</p>
+                        <button class="btn_img" onclick="location.href='https://www.instagram.com/p/CBXIbdbBFbr/?utm_source=ig_web_copy_link'">Digital illustration</button>
+                    </div>
+                </li>
+                <li class="grid-item element-item artwork">
+                    <img src="./images/Moonlandermusic_commission01_ML.png"/>
+                    <div class="overlay">
+                        <p class="caption">Album artwork commission</p>
+                        <button class="btn_img" onclick="location.href='https://www.artstation.com/artwork/VdAbRn'">Digital illustration</button>
+                    </div>
+                </li>
+                <li class="grid-item element-item artwork">
+                    <img src="./images/kanekifingerfix.jpg"/>
+                    <div class="overlay">
+                        <p class="caption">Kaneki Ken</p>
+                        <button class="btn_img" onclick="location.href='https://youtu.be/4Nbx5guLf9Y'">Speedpaint</button>
+                    </div>
+                </li>
+                <li class="grid-item element-item artwork">
+                    <img src="./images/korean_girl.png"/>
+                    <div class="overlay">
+                        <p class="caption">Far away</p>
+                        <button class="btn_img" onclick="location.href='https://www.deviantart.com/wachthebirdie/art/Korean-Girl-839880717'">Digital illustration</button>
+                    </div>
+                </li>
+                <li class="grid-item element-item artwork">
+                    <img src="./images/striped.png"/>
+                    <div class="overlay">
+                        <p class="caption">Galaxy</p>
+                        <button class="btn_img" onclick="location.href='https://chendll.tumblr.com/post/617214527281528832/thinking-hard'">Traditional painting</button>
+                    </div>
+                </li>
+                <li class="grid-item element-item programming">
+                    <img src="./images/scout_screenshot.png"/>
+                    <div class="overlay">
+                        <p class="caption">Scout: Timetabling App</p>
+                        <button class="btn_img" onclick="location.href='https://devpost.com/software/scout-y70jir'">Web app (Hack Cambridge 101: 1st place)</button>
+                    </div>
+                </li>
+                <li class="grid-item element-item programming">
+                    <img src="./images/diy_organ.png"/>
+                    <div class="overlay">
+                        <p class="caption">DIY organ pedal board</p>
+                        <button class="btn_img" onclick="location.href='https://youtu.be/HGT1bRfzNQA'">Arduino project</button>
+                    </div>
+                </li>
+                <li class="grid-item element-item programming">
+                    <img src="./images/hughshercliff.png"/>
+                    <div class="overlay">
+                        <p class="caption">Engi-Dad</p>
+                        <button class="btn_img" onclick="location.href='https://github.com/yichenhock/EngineeringBot'">Discord API (Python)</button>
+                    </div>
+                </li>
+            </ul>
         </div>
         <div id="contact">
             <h1>contact.</h1>
@@ -116,14 +186,55 @@
         </div>
     </div>
 
+    <!-- overlay pages -->
+
+    <div id="illust_container" class="container">
+        <div onclick="closeillust()"><i class="fas fa-angle-down"></i></div>
+        <h1>illustration prices and examples.</h1>
+        <section>
+            <h2>about me</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+        </section>
+        <section>
+            <h2>skills</h2>
+            <p>
+                i do eveything ;)
+            </p>
+        </section>
+
+    </div>
+    
+
     <div id="footer">
-        yi chen hock<br>2020
+        <table>
+    
+                <tr>
+                    <td><a class="social_contact" href="mailto:ych31@cam.ac.uk"><i class="far fa-envelope"></i></a></td>
+                    <td><a class="social_contact" href="https://www.facebook.com/profile.php?id=100004854345993"><i class="fab fa-facebook"></i></a></td>
+                    <td><a class="social_contact" href="https://twitter.com/chen_dll"><i class="fab fa-twitter"></i></a></td>
+                    <td><a class="social_contact" href="https://www.instagram.com/chen_dll/"><i class="fab fa-instagram"></i></a></td>
+                    <td><a class="social_contact" href="http://www.youtube.com/c/kawaiiawesomer"><i class="fab fa-youtube"></i></a></td>
+                    <td><a class="social_contact" href="https://chendll.tumblr.com/"><i class="fab fa-tumblr"></i></a></td>
+                    <td><a class="social_contact" href="https://www.artstation.com/chen_dll"><i class="fab fa-artstation"></i></a></td>
+                    <td><a class="social_contact" href="https://www.linkedin.com/in/yichenhock/"><i class="fab fa-linkedin"></i></a></td>
+                    <td><a class="social_contact" href="https://github.com/yichenhock/"><i class="fab fa-github"></i></a></td>
+                </tr>
+        </table>
+        chen_dll<br>2020
     </div>
 
     <script src="index.js" type="text/javascript"></script>
     <script src="particles.js"></script>
     <script src="app.js"></script>
     <script src="typewrite.js"></script>
+    <script src="isotope.pkgd.js"></script>
+    <script src="gallery.js"></script>
+    
 </body>
 
 </html>
