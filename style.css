@@ -92,7 +92,7 @@ body {
 }
 
 #middle {
-    height:100vh;
+    height:100vh; 
     background:linear-gradient(0deg,rgba(165, 26, 26, 0.5),rgba(255, 255, 255, 0.1)),url("./images/background.jpg") center center;
     background-size:cover;
     background-repeat:no-repeat;
@@ -106,12 +106,16 @@ body {
     padding-bottom:10vh;
 }
 #middle table {
-    width:30%;
-    margin:3vh auto;
+    width:75%;
+    margin:3vh 1vh;
+    margin-right: auto;
+    margin-left: auto;
+    /* text-align: center; */
 }
 #middle table tr td {
     text-align:center;
 }
+
 #middle h1 {
     color:rgb(245, 173, 88);
     font-size:70px;
@@ -173,7 +177,6 @@ body {
     background:rgb(245, 173, 88);
 }
 
-
 #portfolio {
     position: relative;
     z-index: 1;
@@ -183,6 +186,7 @@ body {
 }
 #portfolio div h1 {
     font-size:40px;
+    padding-top: 3px;
     background-image: linear-gradient(to left, rgb(245, 173, 88) 0%, #fd9473 100%);
     -webkit-background-clip:text;
     background-clip:text;
@@ -198,7 +202,18 @@ body {
     color: rgb(182, 162, 122);
 }
 
+#portfolio div h3 {
+    color: rgb(90, 90, 90);
+}
+
 #portfolio div p {
+    color: rgb(90, 90, 90);
+    line-height: 1.5em;
+
+}
+
+#portfolio li{
+    margin: 20px 0;
     color: rgb(90, 90, 90);
 }
 
@@ -211,12 +226,12 @@ body {
     padding:2vh 0px !important;
 }
 
-li{ 
-    list-style-type: none; margin-bottom: 40px;
+#gallery li{ 
+    list-style-type: none; margin-bottom: 0px;
     text-align: center;
-  }
+}
 
-ul{ margin: 20px 0; }
+#gallery ul{ margin: 0px 0px; }
 
 .button-group{ text-align: center; margin-bottom: 40px;}
 .btn{
@@ -240,29 +255,28 @@ ul{ margin: 20px 0; }
 }
 
   /* grid */
+.examples{ 
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
 .grid{ 
     display: flex;
-    /* flex-direction: row;
-    justify-content: space-evenly;
-    width: 100%; */
-    width: auto;
+    width: 100%;
     flex-wrap: wrap;
-    margin: 0% 0%;
 }
 
 .grid-item { 
     display: block;
     width: 30%;
-    /* height: auto; */
+    height: auto;
     overflow: hidden;
     transition:0.4s ease-in-out;
-	/* Minimum width of 24rem and grow to fit available space */
-	/* flex: 1 0 24rem; */
-	/* Margin value should be half of grid-gap value as margins on flex items don't collapse */
-	margin: 0rem 0rem;
+    margin: 0px 0px !important;
 }
 
-#work img {
+ img {
 	display: block;
 	width: 100%;
 	height: 100%;
@@ -270,8 +284,8 @@ ul{ margin: 20px 0; }
 	transition: transform 400ms ease-in-out;
 }
 
-.grid-item:hover #work img {
-	transform: scale(1.15);
+.grid-item:hover img {
+	transform: scale(1.01);
 }
   
 .overlay {
@@ -283,6 +297,7 @@ ul{ margin: 20px 0; }
     background: rgba(0, 0, 0, 0);
     transition: background 0.5s ease;
     flex-direction: column;
+    /* justify-content: center; */
     padding-top: 36%;
   }
 
@@ -314,7 +329,7 @@ ul{ margin: 20px 0; }
     padding:8px 40px;
     border-radius:80px;
     font-weight:bold;
-    margin:1vh 10px;
+    margin:1vh;
     transition: 0.4s ease-in;
     text-transform: lowercase;
     
@@ -396,18 +411,31 @@ ul{ margin: 20px 0; }
 }
 
 .container {
-    width:90vw;
-    height:90vh;
-    padding:5vh 5vw;
-    background:rgb(245, 173, 88);
-    color:#fff;
-    z-index:9;
-    position:fixed;
-    max-height:100vh;
-    overflow-y:auto;
-    display:none;
+    width:100%;
+    height:fit-content;
+    padding: 0px 0px;
+    background:transparent;
+    display:inherit;
+    transition: 0.1 ease-in-out;
 }
-
+/* .container div {
+    font-size:25px;
+    margin:20px 0px;
+    transition:0.4s ease-in-out;
+}
+.container div:hover {
+    cursor:pointer;
+}
+.container section {
+    margin:8vh 0px;
+}
+.container h1 {
+    font-size:60px;
+    text-decoration:underline;
+}
+.container p {
+    font-size:21px;
+} */
 #footer {
     width:100%;
     padding:10vh 0px;
@@ -454,6 +482,16 @@ ul{ margin: 20px 0; }
     cursor: pointer;
     color:rgb(245, 173, 88);
 }
+
+button{
+    outline:none;
+}
+
+::selection {
+	color: #fff;
+	background: rgb(245, 173, 88);
+}
+
 ::-webkit-scrollbar {
     width:5px;
     height:5px;
@@ -482,7 +520,7 @@ ul{ margin: 20px 0; }
 50% {background-position: 100% 50%}
 100% {background-position: 0% 50%}
 }
-/* 
+
 @media (max-width: 900px){
     #contact form input {
         width:92%;
@@ -490,4 +528,25 @@ ul{ margin: 20px 0; }
     #contact form textarea {
         width:92%;
     }
-} */
+    #portfolio{
+        width:90%;
+        padding:2% 5%;
+    }
+    .btn_two{
+        padding:8px 10px;
+        margin: 1vh 4px;
+    }
+    .grid-item { 
+        width: 40%;
+    }
+    .grid-item:hover .caption{
+        font-size: 18px;
+    }
+    .overlay{
+        padding-top: 20%;
+    }
+    .btn_img{
+        margin:0;
+        padding:8px 8px;
+    }
+}

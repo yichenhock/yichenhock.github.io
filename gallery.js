@@ -8,21 +8,24 @@ $('.btn').click(function(){
 
 $('.btn.all').click(function(){
     $('.grid').isotope({
-        filter: '*'
+        filter: '*', 
+        layoutMode:'masonry' 
     })			
 });
 
 
-$('.btn.artwork').click(function(){
+$('.btn.art').click(function(){
     $('.grid').isotope({
-        filter: '.artwork'
+        filter: '.art', 
+        layoutMode:'masonry' 
     })
 });
 
 
 $('.btn.programming').click(function(){
     $('.grid').isotope({
-        filter: '.programming'
+        filter: '.programming', 
+        layoutMode:'masonry' 
     })
 });
 
@@ -35,4 +38,11 @@ $('.btn.programming').click(function(){
 //     });
 // });
 
-$('.grid').isotope({ filter: '*' });
+$('.grid').isotope({ 
+    filter: '*', 
+    layoutMode:'masonry' 
+});
+
+$('.examples').isotope({ 
+    layoutMode:'masonry'
+});

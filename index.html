@@ -43,11 +43,6 @@
       </h1>
       <h2>Studying <span style="color: rgb(245, 173, 88)">Engineering</span> at <span style="color: #fd9473">Cambridge</span>. </h2>
       <h3>Digital Illustrator & Programmer</h3>
-      <!-- <div id="menu">
-          <a onclick="showabout()">about</a>
-          <a onclick="showwork()">work</a>
-          <a onclick="showcontact()">contact</a>
-      </div> -->
       <table>
               <tr>
                   <td class="animated zoomIn" style="animation-delay:2.2s;"><a class="social" href="mailto:ych31@cam.ac.uk"><i class="far fa-envelope"></i></a></td>
@@ -64,7 +59,7 @@
       <table>
           <tr>
               <td class="animated zoomIn" style="animation-delay:3.0s;"><button class="btn_one" onclick="location.href='https://chendll.itch.io/'">my games</button></td>
-              <td class="animated zoomIn" style="animation-delay:3.2s;"><button class="btn_one" onclick="location.href='https://ko-fi.com/chen_dll'">support me here</button></td>
+              <td class="animated zoomIn" style="animation-delay:3.2s;"><button class="btn_one" onclick="location.href='https://ko-fi.com/chen_dll'">support me</button></td>
           </tr>
       </table>
     </div>
@@ -85,11 +80,14 @@
             <section>
                 <h2>skills</h2>
                 <div id="used">
-                    <div class = "software"><i style="color: #fd9473" class="fas fa-circle"></i>&nbsp;Arduino</div>
                     <div class = "software"><i style="color: #fd9473" class="fas fa-circle"></i>&nbsp;Python</div>
                     <div class = "software"><i style="color: #fd9473" class="fas fa-circle"></i>&nbsp;Unity</div>
                     <div class = "software"><i style="color: #fd9473" class="fas fa-circle"></i>&nbsp;Godot</div>
                     <div class = "software"><i style="color: #fd9473" class="fas fa-circle"></i>&nbsp;Photoshop</div>
+                    <div class = "software"><i style="color: #fd9473" class="fas fa-circle"></i>&nbsp;HTML</div>
+                    <div class = "software"><i style="color: #fd9473" class="fas fa-circle"></i>&nbsp;CSS</div>
+                    <div class = "software"><i style="color: #fd9473" class="fas fa-circle"></i>&nbsp;JavaScript</div>
+                    <div class = "software"><i style="color: #fd9473" class="fas fa-circle"></i>&nbsp;Arduino</div>
                     <div class = "language"><i style="color: rgb(245, 173, 88)" class="fas fa-circle"></i>&nbsp;English</div>
                     <div class = "language"><i style="color: rgb(245, 173, 88)" class="fas fa-circle"></i>&nbsp;Mandarin Chinese</div>
                 </div>
@@ -98,83 +96,269 @@
         </div>
         <div id="work">
             <h1>works.</h1>
-            <div style="text-align: right;">
-                <button class="btn_two" onclick="showillust()">illustration prices and examples</button>
-                <button class="btn_two">terms of service</button>
-                <!-- <button class="btn_two">commission form</button> -->
+            <div style="text-align: center;">
+                <button class="btn_two" onclick="onNavClick('#projects')">projects</button>
+                <button class="btn_two" onclick="onNavClick('#illust')">illustration prices</button>
+                <button class="btn_two" onclick="onNavClick('#tos')">terms of service</button>
             </div>
+
+            <div id="projects" class="container">
+                <div class="button-group">
+                    <button class="btn all on">all</button>
+                    <button class="btn art">art</button>
+                    <button class="btn programming">programming</button>
+                </div>
+                <ul class="grid">
+                    <li class="grid-item element-item art">
+                        <img src="./images/daizai.png"/>
+                        <div class="overlay" style="text-align: center;">
+                            <p class="caption">Dazai Osamu</p>
+                            <button class="btn_img" onclick="location.href='https://twitter.com/chen_dll/status/1262051686195101698?s=20'">Digital illustration</button>
+                        </div>
+                    </li>
+                    <li class="grid-item element-item art">
+                        <img src="./images/chen_dll3k_final.png"/>
+                        <div class="overlay" style="text-align: center;">
+                            <p class="caption">Curiosity</p>
+                            <button class="btn_img" onclick="location.href='https://www.instagram.com/p/CBXIbdbBFbr/?utm_source=ig_web_copy_link'">Digital illustration</button>
+                        </div>
+                    </li>
+                    <li class="grid-item element-item art">
+                        <img src="./images/Moonlandermusic_commission01_ML.png"/>
+                        <div class="overlay" style="text-align: center;">
+                            <p class="caption">Album artwork commission</p>
+                            <button class="btn_img" onclick="location.href='https://www.artstation.com/artwork/VdAbRn'">Digital illustration</button>
+                        </div>
+                    </li>
+                    <li class="grid-item element-item art">
+                        <img src="./images/kanekifingerfix.jpg"/>
+                        <div class="overlay" style="text-align: center;">
+                            <p class="caption">Kaneki Ken</p>
+                            <button class="btn_img" onclick="location.href='https://youtu.be/4Nbx5guLf9Y'">Speedpaint</button>
+                        </div>
+                    </li>
+                    <li class="grid-item element-item art">
+                        <img src="./images/korean_girl.png"/>
+                        <div class="overlay" style="text-align: center;">
+                            <p class="caption">Far away</p>
+                            <button class="btn_img" onclick="location.href='https://www.deviantart.com/wachthebirdie/art/Korean-Girl-839880717'">Digital illustration</button>
+                        </div>
+                    </li>
+                    <li class="grid-item element-item art">
+                        <img src="./images/striped.png"/>
+                        <div class="overlay" style="text-align: center;">
+                            <p class="caption">Striped</p>
+                            <button class="btn_img" onclick="location.href='https://chendll.tumblr.com/post/617214527281528832/thinking-hard'">Traditional painting</button>
+                        </div>
+                    </li>
+                    <li class="grid-item element-item programming">
+                        <img src="./images/scout_screenshot.png"/>
+                        <div class="overlay" style="text-align: center;">
+                            <p class="caption">Scout: Timetabling App</p>
+                            <button class="btn_img" onclick="location.href='https://devpost.com/software/scout-y70jir'">Web app (Hack Cambridge 101: 1st place)</button>
+                        </div>
+                    </li>
+                    <li class="grid-item element-item programming">
+                        <img src="./images/diy_organ.png"/>
+                        <div class="overlay" style="text-align: center;">
+                            <p class="caption">DIY organ pedal board</p>
+                            <button class="btn_img" onclick="location.href='https://youtu.be/HGT1bRfzNQA'">Arduino project</button>
+                        </div>
+                    </li>
+                    <li class="grid-item element-item programming">
+                        <img src="./images/hughshercliff.png"/>
+                        <div class="overlay" style="text-align: center;">
+                            <p class="caption">Engi-Dad</p>
+                            <button class="btn_img" onclick="location.href='https://github.com/yichenhock/EngineeringBot'">Discord API (Python)</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="illust" class="container">
+            <h1>illustration prices and examples.</h1>
+
+            <p>These illustration prices are for <b>one character</b>. 
+                Prices are mainly determined by <b>how much you would like to show a character</b>. 
+                This goes from <b>bust</b>, <b>waist</b> to <b>full-body</b>. Whether you would like to have hands be shown can be decided by you for no extra charges. 
+            </p>
+            <p>
+                Please bare in mind that these prices can be high because as an artist, I like to add many details and ensure good quality. 
+            </p>
+            <p><b>Extra charges may apply to the following:</b>
+            <ul>
+                <li>Extra characters</li>
+                <li>Complex backgrounds</li>
+                <li>Complex designs</li>
+                <li>Dynamic lighting and poses</li>
+                <li>Objects such as weapons or instruments</li>
+            </ul>
+            </p>
+            <p><b>I can draw</b> animal features (such as ears and tails on a human character), fanart, nude or suggestive (with extra charges), characters with animals, weapons, ornaments, people/idols</p>
             
-            <div class="button-group">
-                <button class="btn all on">all</button>
-                <button class="btn artwork">artwork</button>
-                <button class="btn programming">programming</button>
-            </div>
+            <p><b>I can't draw</b> furries, hard pornography</p>
+            <br>
+            <h2>prices</h2>
+            <table style="width: 20%;">
+                <tr>
+                    <td><h3 style="color:rgb(245, 173, 88)">Head</h3></td>
+                    <td><h3>£80</h3></td>
+                </tr>
+                <tr>
+                    <td><h3 style="color:rgb(245, 173, 88)">Waist</h3></td>
+                    <td><h3>£140</h3></td>
+                </tr>
+                <tr>
+                    <td><h3 style="color:rgb(245, 173, 88)">Full-body</h3></td>
+                    <td><h3>£200</h3></td>
+                </tr>
+            </table>
+            <br>
+            <h2>examples</h2>
             <ul class="grid">
-                <li class="grid-item element-item artwork">
+                <li class="grid-item element-item">
                     <img src="./images/daizai.png"/>
-                    <div class="overlay">
-                        <p class="caption">Dazai Osamu</p>
-                        <button class="btn_img" onclick="location.href='https://twitter.com/chen_dll/status/1262051686195101698?s=20'">Digital illustration</button>
-                    </div>
                 </li>
-                <li class="grid-item element-item artwork">
-                    <img src="./images/chen_dll3k_final.png"/>
-                    <div class="overlay">
-                        <p class="caption">Curiosity</p>
-                        <button class="btn_img" onclick="location.href='https://www.instagram.com/p/CBXIbdbBFbr/?utm_source=ig_web_copy_link'">Digital illustration</button>
-                    </div>
-                </li>
-                <li class="grid-item element-item artwork">
-                    <img src="./images/Moonlandermusic_commission01_ML.png"/>
-                    <div class="overlay">
-                        <p class="caption">Album artwork commission</p>
-                        <button class="btn_img" onclick="location.href='https://www.artstation.com/artwork/VdAbRn'">Digital illustration</button>
-                    </div>
-                </li>
-                <li class="grid-item element-item artwork">
+                <li class="grid-item element-item">
                     <img src="./images/kanekifingerfix.jpg"/>
-                    <div class="overlay">
-                        <p class="caption">Kaneki Ken</p>
-                        <button class="btn_img" onclick="location.href='https://youtu.be/4Nbx5guLf9Y'">Speedpaint</button>
-                    </div>
                 </li>
-                <li class="grid-item element-item artwork">
+                <li class="grid-item element-item">
+                    <img src="./images/atsushicropped.png"/>
+                </li>
+                <li class="grid-item element-item">
+                    <img src="./images/doodlegalaxy.png"/>
+                </li>
+                <li class="grid-item element-item">
+                    <img src="./images/haku.png"/>
+                </li>
+                <li class="grid-item element-item">
+                    <img src="./images/chen_dll3k_final.png"/>
+                </li>
+                <li class="grid-item element-item">
+                    <img src="./images/chuuya.png"/>
+                </li>
+                <li class="grid-item element-item">
+                    <img src="./images/Moonlandermusic_commission01_ML.png"/>
+                </li>
+                <li class="grid-item element-item">
                     <img src="./images/korean_girl.png"/>
-                    <div class="overlay">
-                        <p class="caption">Far away</p>
-                        <button class="btn_img" onclick="location.href='https://www.deviantart.com/wachthebirdie/art/Korean-Girl-839880717'">Digital illustration</button>
-                    </div>
                 </li>
-                <li class="grid-item element-item artwork">
-                    <img src="./images/striped.png"/>
-                    <div class="overlay">
-                        <p class="caption">Galaxy</p>
-                        <button class="btn_img" onclick="location.href='https://chendll.tumblr.com/post/617214527281528832/thinking-hard'">Traditional painting</button>
-                    </div>
+                <li class="grid-item element-item">
+                    <img src="./images/showerfish.jpeg"/>
                 </li>
-                <li class="grid-item element-item programming">
-                    <img src="./images/scout_screenshot.png"/>
-                    <div class="overlay">
-                        <p class="caption">Scout: Timetabling App</p>
-                        <button class="btn_img" onclick="location.href='https://devpost.com/software/scout-y70jir'">Web app (Hack Cambridge 101: 1st place)</button>
-                    </div>
+                <li class="grid-item element-item">
+                    <img src="./images/NayuDTIYS.png"/>
                 </li>
-                <li class="grid-item element-item programming">
-                    <img src="./images/diy_organ.png"/>
-                    <div class="overlay">
-                        <p class="caption">DIY organ pedal board</p>
-                        <button class="btn_img" onclick="location.href='https://youtu.be/HGT1bRfzNQA'">Arduino project</button>
-                    </div>
+                <li class="grid-item element-item">
+                    <img src="./images/Korean gal glasses no sig.png"/>
                 </li>
-                <li class="grid-item element-item programming">
-                    <img src="./images/hughshercliff.png"/>
-                    <div class="overlay">
-                        <p class="caption">Engi-Dad</p>
-                        <button class="btn_img" onclick="location.href='https://github.com/yichenhock/EngineeringBot'">Discord API (Python)</button>
-                    </div>
+                <li class="grid-item element-item">
+                    <img src="./images/v_galaxy.jpeg"/>
+                </li>
+                <li class="grid-item element-item">
+                    <img src="./images/king_jongdae.jpeg"/>
                 </li>
             </ul>
+
         </div>
+
+        <div id="tos" class="container">
+            <h1>terms of service.</h1>
+            <p>This terms of service will be between the <b>artist</b> (Yi Chen) and the <b>commissioner</b>.
+                By commissioning the artist for any service, you are agreeing to the terms of service below.
+                </p>
+            <br>
+            <h2>i. general terms</h2>
+            <p>When describing your commission, please write in a clear and concise manner and provide clear references. 
+                Any ill-advised or rude behaviour will not be tolerated. 
+                If any of the aforementioned behaviour occurs, the commission will be cancelled.</p>
+            <br>
+            <h2>ii. process</h2>
+            <h3>1. updates</h3>
+            <p>Updates will only be given if the commissioner personally asks for them. 
+                Updates will be given if the artist has a question about the commission, or if the artist decides to make major changes to the commission. 
+                Updates will not be given in the event that the commissioner asks for them excessively. 
+                The threshold of defining 'excessive' is at the discretion of the artist.
+                </p>
+            <p>The time for the commission to be completed can be <b>up to 3 months</b> depending on many factors. 
+                These factors include but not limited to:
+                </p>
+            <ul>
+                <li>Artist health</li>
+                <li>Complexity of the commission</li>
+                <li>Work</li>
+                <li>School</li>
+                <li>Family issues</li>
+                </ul>
+            <p>If any of the things stated above occurs, the commissioner will be notified ASAP.</p>
+            <br>
+            <h2>iii. customer satisfaction</h2>
+            <p>The commissioner will receive a sketch of the commission before proceeding to finish the commission. 
+                Please list <b>all the changes</b> when you have received the sketch of the commission. 
+                <b>Please be clear</b> when listing the changes since it will <b>not be revised the second time</b>. 
+                When a commission is completed, only minor changes can be made. What is determined as 'small' is at the discretion of the artist.</p>
+            <p>Any <b>major changes</b> will come with an extra charge, such as:</p>
+            <ul>
+                <li>Character design changes</li>
+                <li>Background changes</li>
+                <li>Pose changes</li>
+                <li>Adding/Subtracting objects and/or characters</li>
+                <li>Anything that requires me to redraw a porttion of the Commission completely</li>
+                </ul>
+            <p>If the commissioner gave a reference that was unclear to start with, <b>you will not be entitled to minor changes without a fee. </b>
+                Fees for such changes can be <b>up to 20%-50% of the original commission price at the discretion of the artist.</b>
+                </p>
+            <br>
+            <h2>iv. copyright/usage policy</h2>
+            <h3>1. non-profit commissions</h3>
+            <p>Do not distribute for profit or to benefit non-profit organizations/entities. 
+                Alterations are allowed by the commissioner but not to gain profit for individual use. 
+                Commissioned products are for personal use. 
+                Only the commissioner may use the commission and grant permission to others to use the commission.
+                The commissioner automatically allows the artist permission to use. 
+                Removing any watermarks/signatures will be considered copyright infringement. 
+                The artist retains rights to the artwork they produce. 
+                The artist is free to post the commission to a portfolio, print it for distribution and sales, and use it in self-promotion. 
+                When using, the artist will not misrepresent the original designs or the intent of the commissioner.
+                </p>
+            <h3>2. commercial commissions</h3>
+            <p>Distribution for profit or to benefit non-profit organizations/entities are granted. 
+                The commissioner may use the commission and grant permission to others to use the commission. 
+                The commissioner must give credit to the artist when in use. 
+                The artist will not have the right to re-sell the commission for another commercial business.
+                The artist retains rights to the artwork they produce. 
+                The commissioner automatically allows the artist permission to use. 
+                The artist will be free to post commission to a portfolio, print it for distribution and sales, and use it in self-promotion. 
+                When using, the artist will not misrepresent the original designs or the intent of the commissioner.
+                </p>
+            <p>
+                A purchase of commercial rights to the artwork will be <b>double of the original price.</b>
+                </p>
+            <h3>3. private commissions</h3>
+            <p>Private commissions come with a 50% fee. 
+                The artist will not be free to post commission to a portfolio, print it for distribution and sales, and use it in self-promotion.
+            </p>
+            <br>
+            <h2>v. payment</h2>
+            <p>All payments are in <b>GBP (Great Britain Pound). </b>
+                Payments can be made with <b>PAYPAL OR INTERNET BANKING ONLY. </b>
+                Any other currency and/or payment method will not be accepted. 
+                Commissions will not be started until I receive the full payment. </p>
+            <br>
+            <h2>vi. cancelling/refunding policy</h2>
+            <p>If payment has not yet been recieved, you, the commissioner, have the right to cancel the commission. 
+                If an invoice has not been sent by the artist to the commissioner promptly, the commissioner has the right to cancel the commission. 
+                The artist has the right to cancel and refund commissions at any time necessary. 
+                The commissioner cannot demand refunds from the artist under any circumstances after the payments are received. 
+                If a charge-back is charged against the artist by a commissioner, the rights of the commission will be retracted from the commissioner and given to the artist. 
+                The artists holds the right to file a complaint if necessary. 
+                The artist retains the right to all transactions received from the commissioner.</p>
+            <br>
+            <p><b>Any statement is subject to change with the artist prior to starting a commission. </b></p>
+                
+        </div>
+
         <div id="contact">
             <h1>contact.</h1>
             <form>
@@ -185,30 +369,6 @@
             </form> 
         </div>
     </div>
-
-    <!-- overlay pages -->
-
-    <div id="illust_container" class="container">
-        <div onclick="closeillust()"><i class="fas fa-angle-down"></i></div>
-        <h1>illustration prices and examples.</h1>
-        <section>
-            <h2>about me</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-        </section>
-        <section>
-            <h2>skills</h2>
-            <p>
-                i do eveything ;)
-            </p>
-        </section>
-
-    </div>
-    
 
     <div id="footer">
         <table>

@@ -1,14 +1,37 @@
+var nav = ["#projects","#illust","#tos"];
+
 $(document).ready(function(){
+    var i;
+    for(i=0;i<nav.length;i++){
+        $(nav[i]).css("display","none");
+    }
+    $(nav[0]).css("display","inherit");
+    if (location.hash != ""){
+        var hash = location.hash;
+        
+        if (nav.includes(hash)) {
+            $(nav[0]).css("display","none");
+            $(hash).css("display","inherit");
+            $('body,html').animate({
+                scrollTop: $(hash).offset().top - 15
+                }, 1200, function(){
+                window.location.hash = hash;
+            });
+        } 
+    }
     $("a").on('click', function(event) {
-      if (this.hash !== "") {
+      
         event.preventDefault();
         var hash = this.hash;
+        
+        if (nav.includes(hash)!=true){
         $('body,html').animate({
         scrollTop: $(hash).offset().top
         }, 1200, function(){
         window.location.hash = hash;
-       });
-       } 
+        });
+        }
+       
       });
   });
   
@@ -24,19 +47,20 @@ window.onscroll = function(){
     }
 };
 
-function showillust(){
-    $("#illust_container").css("display","inherit");
-    $("#illust_container").addClass("animated slideInUp");
-    setTimeout(function(){
-        $("#illust_container").removeClass("animated slideInUp");
-    },800);
-}
-function closeillust(){
-    $("#illust_container").addClass("animated slideOutDown");
-    setTimeout(function(){
-        $("#illust_container").removeClass("animated slideOutDown");
-        $("#illust_container").css("display","none");
-    },800);
+function onNavClick(hash){
+    var i;
+    for (i=0;i<nav.length;i++){
+        $(nav[i]).css("display","none");
+    }
+    $(hash).css("display","inherit");
+    history.replaceState(null, null, hash);
+    $('.examples').isotope({ 
+        layoutMode:'masonry'
+    });
+    $('.grid').isotope({ 
+        filter:"*",
+        layoutMode:'masonry'
+    });
 }
 
 setTimeout(function(){
@@ -50,4 +74,3 @@ setTimeout(function(){
       $("#work").removeClass("animated fadeIn");
     },1000);
 },1500);
-
