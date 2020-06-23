@@ -54,26 +54,8 @@ function onNavClick(hash){
     }
     $(hash).css("display","inherit");
     history.replaceState(null, null, hash);
-    $('.examples').isotope({ 
-        layoutMode:'masonry'
-    });
-    $('.grid').isotope({ 
-        filter:"*",
-        layoutMode:'masonry'
-    });
+    refreshImages();
 }
-
-setTimeout(function(){
-    $("#loading").addClass("animated fadeOut");
-    setTimeout(function(){
-      $("#loading").removeClass("animated fadeOut");
-      $("#loading").css("display","none");
-      $("#box").css("display","none");
-      $("#about").removeClass("animated fadeIn");
-      $("#contact").removeClass("animated fadeIn");
-      $("#work").removeClass("animated fadeIn");
-    },1000);
-},1500);
 
 const scrollToTopButton = document.getElementById('js-top');
 
@@ -100,3 +82,26 @@ scrollToTopButton.onclick = function(e) {
   e.preventDefault();
   scrollToTop();
 }
+
+function refreshImages(){
+  $('.examples').isotope({ 
+    layoutMode:'masonry'
+  });
+  $('.grid').isotope({ 
+      filter:"*",
+      layoutMode:'masonry'
+  });
+}
+
+setTimeout(function(){
+    $("#loading").addClass("animated fadeOut");
+    setTimeout(function(){
+      $("#loading").removeClass("animated fadeOut");
+      $("#loading").css("display","none");
+      $("#box").css("display","none");
+      $("#about").removeClass("animated fadeIn");
+      $("#contact").removeClass("animated fadeIn");
+      $("#work").removeClass("animated fadeIn");
+      refreshImages();
+    },1000);
+},1500);

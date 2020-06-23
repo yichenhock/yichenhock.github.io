@@ -29,15 +29,6 @@ $('.btn.programming').click(function(){
     })
 });
 
-// $('.grid').imagesLoaded(function(){
-//     // grid 배치
-//     $('.grid').isotope({
-//         // options
-//         itemSelector: '.grid-item',
-//         layoutMode: 'fitRows',
-//     });
-// });
-
 $('.grid').isotope({ 
     filter: '*', 
     layoutMode:'masonry' 
