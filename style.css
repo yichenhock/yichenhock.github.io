@@ -596,4 +596,8 @@ button{
         margin:0;
         padding:8px 8px;
     }
+    .btn{
+        padding:8px 8px !important;
+        margin:1vh 5px;
+    }
 }
