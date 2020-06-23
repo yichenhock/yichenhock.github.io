@@ -562,6 +562,13 @@ button{
 }
 
 @media (max-width: 900px){
+    #header {
+        width:90%;
+        padding:0% 5%;
+    }
+    #links a{
+        padding: 5px 0px;
+    }
     #contact form input {
         width:92%;
     }
