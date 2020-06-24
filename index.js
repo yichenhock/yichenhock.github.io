@@ -23,13 +23,17 @@ $(document).ready(function(){
       
         event.preventDefault();
         var hash = this.hash;
+        var href = this.href;
         
-        if (nav.includes(hash)!=true){
-        $('body,html').animate({
-        scrollTop: $(hash).offset().top
-        }, 1200, function(){
-        window.location.hash = hash;
-        });
+        if (nav.includes(hash)!=true && hash.charAt(0) == "#"){
+          $('body,html').animate({
+          scrollTop: $(hash).offset().top
+          }, 1200, function(){
+          window.location.hash = hash;
+          });
+        }
+        else{
+          window.location.href = href;
         }
        
       });
