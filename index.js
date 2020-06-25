@@ -32,7 +32,7 @@ $(document).ready(function(){
           window.location.hash = hash;
           });
         }
-        else{
+        else if (hash!=""){
           window.location.href = href;
         }
        
