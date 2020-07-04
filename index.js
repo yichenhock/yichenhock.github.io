@@ -19,20 +19,23 @@ $(document).ready(function(){
             });
         } 
     }
+
     $("a").on('click', function(event) {
       
         event.preventDefault();
         var hash = this.hash;
         var href = this.href;
         
-        if (nav.includes(hash)!=true && hash.charAt(0) == "#"){
+        var sections = ['#about','#work','#contact'];
+        
+        if (sections.includes(hash)==true){
           $('body,html').animate({
           scrollTop: $(hash).offset().top
           }, 1200, function(){
           window.location.hash = hash;
           });
         }
-        else if (hash!=""){
+        else if (href!=""){
           window.location.href = href;
         }
        
